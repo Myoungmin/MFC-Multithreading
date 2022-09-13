@@ -13,6 +13,7 @@ public:
 	CMFCMultithreadingDlg(CWnd* pParent = nullptr);	// standard constructor
 	afx_msg void OnBnClickedButtonStart();
 	afx_msg void OnBnClickedButtonStop();
+	afx_msg void OnTimer(UINT_PTR nIDEvent);
 
 	int currValue;
 	int maxValue;

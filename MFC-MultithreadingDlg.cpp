@@ -67,6 +67,7 @@ BEGIN_MESSAGE_MAP(CMFCMultithreadingDlg, CDialogEx)
 	ON_WM_QUERYDRAGICON()
 	ON_BN_CLICKED(IDC_BUTTON1, &CMFCMultithreadingDlg::OnBnClickedButtonStart)
 	ON_BN_CLICKED(IDC_BUTTON2, &CMFCMultithreadingDlg::OnBnClickedButtonStop)
+	ON_WM_TIMER()
 END_MESSAGE_MAP()
 
 
@@ -166,4 +167,12 @@ void CMFCMultithreadingDlg::OnBnClickedButtonStart()
 void CMFCMultithreadingDlg::OnBnClickedButtonStop()
 {
 	// TODO: Add your control notification handler code here
+}
+
+
+void CMFCMultithreadingDlg::OnTimer(UINT_PTR nIDEvent)
+{
+	// TODO: Add your message handler code here and/or call default
+
+	CDialogEx::OnTimer(nIDEvent);
 }
