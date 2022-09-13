@@ -31,6 +31,8 @@ public:
 // Implementation
 protected:
 	DECLARE_MESSAGE_MAP()
+public:
+	afx_msg void OnBnClickedButtonStop();
 };
 
 CAboutDlg::CAboutDlg() : CDialogEx(IDD_ABOUTBOX)
@@ -43,6 +45,7 @@ void CAboutDlg::DoDataExchange(CDataExchange* pDX)
 }
 
 BEGIN_MESSAGE_MAP(CAboutDlg, CDialogEx)
+	ON_BN_CLICKED(IDC_BUTTON2, &CAboutDlg::OnBnClickedButtonStop)
 END_MESSAGE_MAP()
 
 
@@ -65,6 +68,7 @@ BEGIN_MESSAGE_MAP(CMFCMultithreadingDlg, CDialogEx)
 	ON_WM_SYSCOMMAND()
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
+	ON_BN_CLICKED(IDC_BUTTON1, &CMFCMultithreadingDlg::OnBnClickedButtonStart)
 END_MESSAGE_MAP()
 
 
@@ -153,3 +157,15 @@ HCURSOR CMFCMultithreadingDlg::OnQueryDragIcon()
 	return static_cast<HCURSOR>(m_hIcon);
 }
 
+
+
+void CMFCMultithreadingDlg::OnBnClickedButtonStart()
+{
+	// TODO: Add your control notification handler code here
+}
+
+
+void CAboutDlg::OnBnClickedButtonStop()
+{
+	// TODO: Add your control notification handler code here
+}
