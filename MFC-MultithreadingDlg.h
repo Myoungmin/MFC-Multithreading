@@ -4,7 +4,6 @@
 
 #pragma once
 
-
 // CMFCMultithreadingDlg dialog
 class CMFCMultithreadingDlg : public CDialogEx
 {
@@ -14,11 +13,9 @@ public:
 	afx_msg void OnBnClickedButtonStart();
 	afx_msg void OnBnClickedButtonStop();
 	afx_msg void OnTimer(UINT_PTR nIDEvent);
+	static UINT MyThreadProc(LPVOID Param);
 
 	CStatic m_ctrlStatus;
-	int currValue;
-	int maxValue;
-	BOOL stopNow;
 
 // Dialog Data
 #ifdef AFX_DESIGN_TIME
@@ -39,7 +36,4 @@ protected:
 	afx_msg void OnPaint();
 	afx_msg HCURSOR OnQueryDragIcon();
 	DECLARE_MESSAGE_MAP()
-
-private:
-	UINT MyThreadProc(LPVOID Param);
 };

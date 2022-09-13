@@ -13,6 +13,10 @@
 #endif
 
 
+int currValue;
+int maxValue;
+BOOL stopNow;
+
 // CAboutDlg dialog used for App About
 
 class CAboutDlg : public CDialogEx
@@ -160,7 +164,13 @@ HCURSOR CMFCMultithreadingDlg::OnQueryDragIcon()
 
 void CMFCMultithreadingDlg::OnBnClickedButtonStart()
 {
-	// TODO: Add your control notification handler code here
+	currValue = 0;
+	maxValue = 5000;
+	stopNow = 0;
+	m_ctrlStatus.SetWindowText(L"Starting...");
+	SetTimer(1234, 333, 0); // 3 times per second
+
+	AfxBeginThread(MyThreadProc, 0); // <<== START THE THREAD
 }
 
 
