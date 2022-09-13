@@ -176,7 +176,9 @@ void CMFCMultithreadingDlg::OnBnClickedButtonStart()
 
 void CMFCMultithreadingDlg::OnBnClickedButtonStop()
 {
-	// TODO: Add your control notification handler code here
+	stopNow = TRUE;
+	KillTimer(1234);
+	m_ctrlStatus.SetWindowText(L"Stopped");
 }
 
 
