@@ -59,6 +59,7 @@ CMFCMultithreadingDlg::CMFCMultithreadingDlg(CWnd* pParent /*=nullptr*/)
 void CMFCMultithreadingDlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
+	DDX_Control(pDX, IDC_STATIC_TEXT, m_ctrlStatus);
 }
 
 BEGIN_MESSAGE_MAP(CMFCMultithreadingDlg, CDialogEx)
@@ -172,7 +173,9 @@ void CMFCMultithreadingDlg::OnBnClickedButtonStop()
 
 void CMFCMultithreadingDlg::OnTimer(UINT_PTR nIDEvent)
 {
-	// TODO: Add your message handler code here and/or call default
+	CString sStatusMsg;
+	sStatusMsg.Format(L"Running: %d", currValue);
+	m_ctrlStatus.SetWindowText(sStatusMsg);
 
 	CDialogEx::OnTimer(nIDEvent);
 }

@@ -15,6 +15,7 @@ public:
 	afx_msg void OnBnClickedButtonStop();
 	afx_msg void OnTimer(UINT_PTR nIDEvent);
 
+	CStatic m_ctrlStatus;
 	int currValue;
 	int maxValue;
 	BOOL stopNow;
