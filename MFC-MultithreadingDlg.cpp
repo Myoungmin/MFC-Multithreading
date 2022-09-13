@@ -158,7 +158,6 @@ HCURSOR CMFCMultithreadingDlg::OnQueryDragIcon()
 }
 
 
-
 void CMFCMultithreadingDlg::OnBnClickedButtonStart()
 {
 	// TODO: Add your control notification handler code here
@@ -178,4 +177,15 @@ void CMFCMultithreadingDlg::OnTimer(UINT_PTR nIDEvent)
 	m_ctrlStatus.SetWindowText(sStatusMsg);
 
 	CDialogEx::OnTimer(nIDEvent);
+}
+
+
+UINT CMFCMultithreadingDlg::MyThreadProc(LPVOID Param)
+{
+	while (!stopNow && (currValue < maxValue)) {
+		currValue++;
+		Sleep(50);     // would do some work here
+	}
+
+	return TRUE;
 }
